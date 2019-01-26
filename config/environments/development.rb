@@ -26,6 +26,18 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+  
+  config.generators do |g|
+    g.test_framework false
+    g.helper false
+    g.javascripts false
+    g.stylesheets false
+    g.test_framework :rspec,
+    view_specs: false,
+    helper_specs: false,
+    routing_specs: false,
+    request_specs: false
+  end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
